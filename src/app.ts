@@ -1,22 +1,12 @@
-import express from "express";
-import config from "config";
-import connect from "./db/connect";
-import routes from "./routes";
-import { deserializeUser } from "./middleware";
-
-const port = config.get("port") as number;
-const host = config.get("host") as string;
+import express from 'express';
 
 const app = express();
-app.use(deserializeUser);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.listen(port, host, () => {
-  console.info(`Server listing at http://${host}:${port}`);
-
-  connect();
-
-  routes(app);
+const host = 'localhost';
+const port = '8080';
+app.listen(8080, 'localhost', () => {
+	console.info(`Server listing at http://${host}:${port}`);
 });
