@@ -5,9 +5,16 @@ import {
 	Ref,
 } from '@typegoose/typegoose';
 import { Answer } from './Answer.model';
-import { QuestionStatus } from './enums/Status.enum';
-import { Metadata } from './interfaces/metadata';
 import { User } from './User.model';
+
+export enum QuestionStatus {
+	SPAM = 'SPAM',
+	NEED_REVIEW = 'NEED_REVIEW',
+	POSTED = 'POSTED',
+}
+export interface Metadata {
+	[key: string]: any;
+}
 
 @modelOptions({ schemaOptions: { timestamps: true } })
 export class Question {
@@ -34,4 +41,4 @@ export class Question {
 	public metadata!: Metadata;
 }
 
-export const QuestionModel = getModelForClass(Question); 
+export const QuestionModel = getModelForClass(Question);

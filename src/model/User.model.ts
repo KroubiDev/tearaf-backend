@@ -21,13 +21,6 @@ export class User {
 		match: /[\w-]+@([\w-]+\.)+[\w-]+/,
 	})
 	public email!: string;
-
-	@prop({
-		default: function (this: User) {
-			return `${this.firstName} ${this.lastName}`;
-		},
-	})
-	public fullName!: string;
 }
 
 export const UserMode = getModelForClass(User); 
