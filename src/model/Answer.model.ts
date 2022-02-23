@@ -4,7 +4,7 @@ import {
 	prop,
 	Ref,
 } from '@typegoose/typegoose';
-import { Comment } from './Comment.model';
+import { Replay } from './Replay.model';
 import { Question } from './Question.model';
 import { User } from './User.model';
 
@@ -25,8 +25,8 @@ export class Answer {
 	@prop({ default: [], required: false, ref: () => User })
 	public downVotes: Ref<User[]>;
 
-	@prop({ default: [], required: false, ref: () => Comment })
-	public comments: Ref<Comment[]>;
+	@prop({ default: [], required: false, ref: () => Replay })
+	public comments: Ref<Replay[]>;
 }
 
 export const UserMode = getModelForClass(Answer);

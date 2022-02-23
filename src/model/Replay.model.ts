@@ -1,9 +1,14 @@
-import { getModelForClass, modelOptions, prop, Ref } from '@typegoose/typegoose';
+import {
+	getModelForClass,
+	modelOptions,
+	prop,
+	Ref,
+} from '@typegoose/typegoose';
 import { Answer } from './Answer.model';
 import { User } from './User.model';
 
 @modelOptions({ schemaOptions: { timestamps: true } })
-export class Comment {
+export class Replay {
 	@prop({ required: true, maxlength: 500 })
 	public text!: string;
 
@@ -14,4 +19,4 @@ export class Comment {
 	public answer!: Ref<Answer>;
 }
 
-export const UserMode = getModelForClass(Comment); 
+export const UserMode = getModelForClass(Replay);
