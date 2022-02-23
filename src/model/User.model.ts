@@ -1,4 +1,10 @@
-import { getModelForClass, modelOptions, prop } from '@typegoose/typegoose';
+import {
+	getModelForClass,
+	modelOptions,
+	prop,
+	Ref,
+} from '@typegoose/typegoose';
+import { Question } from './Question.model';
 
 @modelOptions({ schemaOptions: { timestamps: true } })
 export class User {
@@ -14,6 +20,12 @@ export class User {
 	@prop({ required: true, trim: true, maxlength: 20 })
 	public phoneNumber!: string;
 
+	@prop({ default: [], required: false, ref: () => Question })
+	public savedQuestions: Ref<Question[]>;
+
+	@prop({ default: [], required: false, ref: () => Question })
+    public answeredQuestions: Ref<Question[]>;
+    
 	@prop({
 		required: true,
 		trim: true,
@@ -23,4 +35,4 @@ export class User {
 	public email!: string;
 }
 
-export const UserMode = getModelForClass(User); 
+export const UserMode = getModelForClass(User);
