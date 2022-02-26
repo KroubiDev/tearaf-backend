@@ -7,6 +7,6 @@ app.use(express.urlencoded({ extended: false }));
 
 const host = 'localhost';
 const port = '8080';
-app.listen(8080, 'localhost', () => {
+app.listen(8080, 'localhost', async () => {
 	console.info(`Server listing at http://${host}:${port}`);
 });
