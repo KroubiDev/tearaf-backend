@@ -18,7 +18,11 @@ export interface Metadata {
 
 @modelOptions({ schemaOptions: { timestamps: true } })
 export class Question {
-	@prop({ required: true, maxlength: 10000 })
+	@prop({
+		required: true,
+		maxlength: [10000, 'max question length is 10000 characters'],
+		minlength: [15, 'minimum question length is 20 characters'],
+	})
 	public text!: string;
 
 	@prop({ required: true, ref: () => User })
