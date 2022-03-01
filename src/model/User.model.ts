@@ -25,7 +25,8 @@ export class User {
 
 	@prop({ default: [], required: false, ref: () => Question })
     public answeredQuestions: Ref<Question[]>;
-    
+
+	
 	@prop({
 		required: true,
 		trim: true,
@@ -35,4 +36,4 @@ export class User {
 	public email!: string;
 }
 
-export const UserMode = getModelForClass(User);
+export const UserModel = getModelForClass(User);

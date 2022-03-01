@@ -19,4 +19,4 @@ export class Replay {
 	public answer!: Ref<Answer>;
 }
 
-export const UserMode = getModelForClass(Replay);
+export const ReplayModel = getModelForClass(Replay);

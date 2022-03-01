@@ -24,9 +24,9 @@ export class Answer {
 
 	@prop({ default: [], required: false, ref: () => User })
 	public downVotes: Ref<User[]>;
-
+	
 	@prop({ default: [], required: false, ref: () => Replay })
 	public comments: Ref<Replay[]>;
 }
 
-export const UserMode = getModelForClass(Answer);
+export const AnswerModel = getModelForClass(Answer);
