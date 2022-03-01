@@ -15,7 +15,7 @@ export class Replay {
 	@prop({ required: true, ref: () => User })
 	public author!: Ref<User>;
 
-	@prop({ required: true, ref: () => Answer })
+	@prop({ required: true, ref: 'Answer' })
 	public answer!: Ref<Answer>;
 }
 

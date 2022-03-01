@@ -16,7 +16,7 @@ export class Answer {
 	@prop({ required: true, ref: () => User })
 	public author!: Ref<User>;
 
-	@prop({ required: true, ref: () => Question })
+	@prop({ required: true, ref: 'Question' })
 	public question!: Ref<Question>;
 
 	@prop({ default: [], required: false, ref: () => User })
@@ -24,7 +24,7 @@ export class Answer {
 
 	@prop({ default: [], required: false, ref: () => User })
 	public downVotes: Ref<User[]>;
-	
+
 	@prop({ default: [], required: false, ref: () => Replay })
 	public comments: Ref<Replay[]>;
 }

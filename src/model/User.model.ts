@@ -20,13 +20,12 @@ export class User {
 	@prop({ required: true, trim: true, maxlength: 20 })
 	public phoneNumber!: string;
 
-	@prop({ default: [], required: false, ref: () => Question })
+	@prop({ default: [], required: false, ref: 'Question' })
 	public savedQuestions: Ref<Question[]>;
 
-	@prop({ default: [], required: false, ref: () => Question })
-    public answeredQuestions: Ref<Question[]>;
+	@prop({ default: [], required: false, ref: 'Question' })
+	public answeredQuestions: Ref<Question[]>;
 
-	
 	@prop({
 		required: true,
 		trim: true,
