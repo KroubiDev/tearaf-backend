@@ -20,7 +20,7 @@ export class Answer {
 	@prop({ required: true, ref: () => User })
 	public author!: Ref<User>;
 
-	@prop({ required: true, ref: () => Question })
+	@prop({ required: true, ref: 'Question' })
 	public question!: Ref<Question>;
 
 	@prop({ default: [], required: false, ref: () => User })
@@ -33,4 +33,4 @@ export class Answer {
 	public comments: Ref<Replay[]>;
 }
 
-export const UserMode = getModelForClass(Answer);
+export const AnswerModel = getModelForClass(Answer);

@@ -18,6 +18,12 @@ export class User {
 	})
 	public username!: string;
 
+	@prop({ default: [], required: false, ref: 'Question' })
+	public savedQuestions: Ref<Question[]>;
+
+	@prop({ default: [], required: false, ref: 'Question' })
+	public answeredQuestions: Ref<Question[]>;
+
 	@prop({
 		required: true,
 		trim: true,
@@ -27,12 +33,6 @@ export class User {
 	})
 	public email!: string;
 
-	@prop({ default: [], required: false, ref: () => Question })
-	public savedQuestions: Ref<Question[]>;
-
-	@prop({ default: [], required: false, ref: () => Question })
-	public answeredQuestions: Ref<Question[]>;
-	
 	@prop({ required: false, trim: true, maxlength: 15 })
 	public firstName?: string;
 
@@ -43,4 +43,4 @@ export class User {
 	public phoneNumber?: string;
 }
 
-export const UserMode = getModelForClass(User);
+export const UserModel = getModelForClass(User);
