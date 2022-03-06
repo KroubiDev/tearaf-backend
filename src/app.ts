@@ -8,7 +8,7 @@ import { getUser, requestLogger, tokenParser } from './utils/middlewares';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import { MONGODB_URI } from './utils/config';
+import { MONGODB_URI, PORT} from './utils/config';
 
 const app = express();
 app.use(cors());
@@ -26,7 +26,7 @@ app.get('/question/feed', questionFeedController());
 app.post('/question', getUser, addQuestionController());
 
 const host = 'localhost';
-const port = '8080';
+const port = PORT || 5000;
 
 mongoose
 	.connect(MONGODB_URI)

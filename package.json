@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --inspect -- src/app.ts"
+    "dev": "ts-node-dev --inspect -- src/app.ts",
+    "start" : "docker-compose up --build -d && docker attach api",
+    "bye": "docker-compose down"
   },
   "dependencies": {
     "@typegoose/typegoose": "^9.7.0",
